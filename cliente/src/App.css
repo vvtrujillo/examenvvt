@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+.container2{
+  display: inline-flex;
+}
+
+.main-comp{
+  background-color: rgb(240, 240, 240);
+  border: solid black 2px;
+  border-radius: 5px;
+  height: auto;
+  width: auto;
+  margin-block-end: 20px;
+  /*display: flex;*/
+  margin-left: 20px;  
+}
+.container-subcontent{
+  display: flex;
+  justify-content: space-between;
+}
+.subcontent-comp{
+  background-color: rgb(255, 255, 255);
+  border: solid rgb(0, 0, 0) 2px;
+  border-radius: 5px;
+  height: 500px;
+  width: 300px;
+  margin: 10px;
+  overflow-y: scroll;
+}
+.controles-main{
+  margin: 10px;
+  height: auto;
+}

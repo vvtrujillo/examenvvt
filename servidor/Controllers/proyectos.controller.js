@@ -45,3 +45,62 @@ module.exports.actualizar = (req, res) => {
             })
         });
 }
+
+module.exports.listarCreados = (req, res) => {
+    Proyecto.find({estado:'creado'})
+        .then(resp => {
+            res.json({
+                datosProy: resp,
+                error: false
+            })
+        }).catch(e => {
+            res.json({
+                error: true,
+                mensaje: 'Ha ocurrido un error al rescatar la información.'
+            })
+        });
+}
+
+module.exports.listarEjecucion = (req, res) => {
+    Proyecto.find({estado:'ejecucion'})
+        .then(resp => {
+            res.json({
+                datosProy: resp,
+                error: false
+            })
+        }).catch(e => {
+            res.json({
+                error: true,
+                mensaje: 'Ha ocurrido un error al rescatar la información.'
+            })
+        });
+}
+
+module.exports.listarTerminados = (req, res) => {
+    Proyecto.find({estado:'terminado'})
+        .then(resp => {
+            res.json({
+                datosProy: resp,
+                error: false
+            })
+        }).catch(e => {
+            res.json({
+                error: true,
+                mensaje: 'Ha ocurrido un error al rescatar la información.'
+            })
+        });
+}
+
+module.exports.eliminar = (req, res) => {
+    Proyecto.findByIdAndDelete(req.params.id)
+        .then(resp => {
+            res.json({
+                error: false
+            })
+        }).catch(e => {
+            res.json({
+                error: true,
+                mensaje: 'Ha ocurrido un error'
+            })
+        });
+}
